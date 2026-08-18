@@ -266,62 +266,7 @@ Latent feature extraction
 CSV embeddings
 ```
 
----
 
-## 6. Purpose of the Three Preprocessing Strategies
-
-The three approaches are intended to evaluate how different spatial preprocessing strategies affect the latent representations extracted by BrainIAC and MRI-CORE.
-
-### 1. Original resizing
-
-Provides a baseline in which the complete original FeTS2024 volume is retained and directly adapted to the model input dimensions.
-
-### 2. Common cropping
-
-Removes a shared region of zero-padding using one bounding box that is valid for the entire FeTS2024 training dataset.
-
-This provides a standardized cropped representation across all subjects.
-
-### 3. Individual cropping
-
-Removes zero-padding separately for each image.
-
-This produces a tighter image-specific representation but results in variable original spatial dimensions before the final resizing/reshaping step.
-
----
-
-## 7. CSV Data Format
-
-The extracted latent features are stored in CSV format.
-
-For BrainIAC:
-
-```text
-Rows    = FeTS2024 training images
-Columns = 768 latent features
-Shape   = 1251 × 768
-```
-
-For MRI-CORE:
-
-```text
-Rows    = FeTS2024 training images
-Columns = 255 latent features
-Shape   = 1251 × 255
-```
-
-## 8. Dataset
-
-The feature extraction is performed on the **FeTS2024 training dataset**.
-
-The four MRI modalities considered are:
-
-```text
-T1
-T2
-T1ce / TCE
-FLAIR
-```
 
 
 
